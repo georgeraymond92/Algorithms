@@ -25,20 +25,20 @@
 // Output: 28
 
 
-var uniquePaths = function (m, n) {
+// var uniquePaths = function (m, n) {
 
-  function fac(n) {
-    return (n < 2) ? 1 : fac(n - 1) * n;
-  }
+//   function fac(n) {
+//     return (n < 2) ? 1 : fac(n - 1) * n;
+//   }
 
 
-  let total = m - 1 + n - 1;
+//   let total = m - 1 + n - 1;
 
-  return fac(total) / fac(m - 1) / fac(n - 1);
+//   return fac(total) / fac(m - 1) / fac(n - 1);
 
-};
+// };
 
-console.log(uniquePaths(3, 2), 3);
+// console.log(uniquePaths(3, 2), 3);
 // console.log(uniquePaths(7, 3), 28);
 
 
@@ -67,29 +67,29 @@ const numRoutes = (m, n) => {
 
 
 
-const dfs = (m, n) => {
+const uniquePaths = (m, n) => {
 
   let routes = 0;
 
   let current = [1, 1];
 
-  const func = () => {
+  const walk = () => {
     if (current[0] + 1 <= m) {
       current[0]++;
-      func();
+      walk();
       current[0]--;
     }
 
     if (current[1] + 1 <= n) {
       current[1]++;
-      func();
+      walk();
       current[1]--;
     }
 
     if (current[0] === m && current[1] === n) routes++;
   }
 
-  func();
+  walk();
 
 
   return routes;
@@ -102,7 +102,7 @@ const dfs = (m, n) => {
 //  0, 0, 0, 0
 
 
-console.log(dfs(7, 3))
+console.log(uniquePaths(7, 3))
 
 // if left go left
 // if right go right
