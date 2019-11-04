@@ -7,7 +7,6 @@ const swap = (arr, idx1, idx2) => {
   ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
 }
 
-
 // selection sort loops throught the array and finds the minimum value and swaps it to the lowest postion
 // it the increments and loops again putting the next lowest of the remaining elments to the current position
 // big O of selection sort is On^2 roughly
