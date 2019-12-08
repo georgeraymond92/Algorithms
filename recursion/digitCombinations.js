@@ -69,3 +69,44 @@ const findCombinations = (digits, result, current, index, mappings) => {
   }
 
 }
+
+//  Alternate
+
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function (digits) {
+  let result = [];
+  if (digits == null || digits.length == 0) {
+    return result;
+  }
+  let mappings = [
+    '0',
+    '1',
+    'abc',
+    'def',
+    'ghi',
+    'jkl',
+    'mno',
+    'pqrs',
+    'tuv',
+    'wxyz'
+  ];
+  letterCombinationsRecursive(result, digits, '', 0, mappings);
+  return result;
+};
+
+let letterCombinationsRecursive = (result, digits, current, index, mappings) => {
+  if (index == digits.length) {
+    result.push(current);
+    return;
+  }
+
+  let letters = mappings[digits[index] - "0"];
+  for (let i = 0; i < letters.length; i++) {
+    letterCombinationsRecursive(result, digits, current + letters[i], index + 1, mappings);
+
+  }
+
+}
