@@ -29,7 +29,6 @@ class MaxHeap {
     }
   }
 
-
 }
 
 let heap = new MaxHeap();
