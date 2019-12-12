@@ -78,3 +78,14 @@ const addListToArray = (list, array) => {
 }
 
 
+// Complexity Analysis
+
+// Time complexity : O(N\log N)O(NlogN) where NN is the total number of nodes.
+
+// Collecting all the values costs O(N)O(N) time.
+// A stable sorting algorithm costs O(N\log N)O(NlogN) time.
+// Iterating for creating the linked list costs O(N)O(N) time.
+// Space complexity : O(N)O(N).
+
+// Sorting cost O(N)O(N) space (depends on the algorithm you choose).
+// Creating a new linked list costs O(N)O(N) space.
